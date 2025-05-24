@@ -1,8 +1,9 @@
-title: Portfolio de juanma-cc
-description: Mi portfolio (en construcción)
-#theme: minimal
+title: Portfolio de @juanma-cc
+description: Este es mi portfolio personal donde recopilo proyectos y conocimientos sobre ciberseguridad.
 show_downloads: false
+show_git: false
 google_analytics: false
 remote_theme: pages-themes/hacker@v0.2.0
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+- jekyll-remote-theme
+#theme: jekyll-theme-hacker
