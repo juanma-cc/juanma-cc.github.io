@@ -1,7 +1,3 @@
----
-layout: default
-title: 🛡️ Evil-WinRM: Acceso remoto a sistemas Windows
----
 # 🛡️ ¿Qué es `evil-winrm` y cómo usarlo para pruebas de penetración?  
 
 `evil-winrm` es una herramienta poderosa, escrita en Ruby, que permite acceder a máquinas Windows remotas mediante **WinRM (Web Remote Management)**. Es una herramienta clave en la caja de herramientas de cualquier profesional de ciberseguridad o auditor de sistemas.

@@ -52,7 +52,11 @@ Writeups de Hack The Box, una plataforma de hacking ético con máquinas de dife
 
 Máquinas y salas resueltas en la plataforma THM, ideal para principiantes.
 
-- [Próximanente](./thm-writeups)
+## 05-2025
+
+- Vulnversity - [Writeup](./thm-writeups/thm_vulnversity.md)
+
+
 
 ➡️ *[Ver todos los writeups de THM](./thm-writeups)*
 
