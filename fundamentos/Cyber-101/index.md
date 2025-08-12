@@ -10,9 +10,9 @@ Curso introductorio sobre conceptos fundamentales de ciberseguridad y Linux, dis
 
 Entiende las bases del campo de la ciberseguridad y cómo empezar tu camino profesional.
 
-> [Cyber Kill Chain](/Fundamentos/Cyber-101/01/cyber-kill-chain.md)  
-> [Gestión de Seguridad Informática y GRC](/Fundamentos/Cyber-101/01/gestion-seguridad-grc.md)  
-> [Modelos de Seguridad y Principios de Diseño](/Fundamentos/Cyber-101/01/modelos-principios-diseno.md)
+> [Cyber Kill Chain](/Fundamentos/Cyber-101/01/Cyber_Kill_Chain)  
+> [Gestión de Seguridad Informática y GRC](/Fundamentos/Cyber-101/01/Gestión_de_Seguridad_Informática_y_GRC)  
+> [Modelos de Seguridad y Principios de Diseño](/Fundamentos/Cyber-101/01/Modelos_de_Seguridad_y_Principios_de_Diseño)
 
 ---
 
@@ -20,12 +20,12 @@ Entiende las bases del campo de la ciberseguridad y cómo empezar tu camino prof
 
 Introducción práctica al uso de sistemas Linux en entornos de ciberseguridad.
 
-> [Linux Fundamentals 1 - Find Grep Operadores](/Fundamentos/Cyber-101/02/linux-fundamentals-1-find-grep-operadores.md)  
-> [Linux Fundamentals 2 - SSH](/Fundamentos/Cyber-101/02/linux-fundamentals-2-ssh.md)  
-> [Linux Fundamentals 3 - wget, ps, cron, apt, logs](/Fundamentos/Cyber-101/02/linux-fundamentals-3-wget-ps-cron-apt-logs.md)
+> [Linux Fundamentals 1 - Find Grep Operadores](/Fundamentos/Cyber-101/02/Linux_Fundamentals_1_-_Find_Grep_Operadores)  
+> [Linux Fundamentals 2 - SSH](/Fundamentos/Cyber-101/02/Linux_Fundamentals_2_-_SSH)  
+> [Linux Fundamentals 3 - wget, ps, cron, apt, logs](/Fundamentos/Cyber-101/02/Linux_Fundamentals_3_-_wget,_ps,_cron,_apt,_logs)
 
 ---
-
+<!--
 ### 🔹 03 - Windows and AD Fundamentals
 
 Conceptos básicos sobre sistemas Windows y Active Directory desde la perspectiva de seguridad.
@@ -148,5 +148,5 @@ Guía para construir una carrera sólida en ciberseguridad.
 > [Training Impact on Teams](/Fundamentos/Cyber-101/13/training-impact-on-teams.md)
 
 ---
-
+-->
 ➡️ *[Ir al Índice Principal](/)*

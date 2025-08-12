@@ -25,19 +25,6 @@ Pequeñas guías y notas sobre conceptos clave que todo profesional debería con
 
 - [CyberSecurity 101](/Fundamentos/Cyber-101)  
 
-> [1. Start Your Cyber Journey](/Fundamentos/Cyber-101/01/)  
-    - [Cyber Kill Chain](/Fundamentos/Cyber-101/01/Cyber_Kill_Chain.md)  
-    - [Gestión de Seguridad Informática](/Fundamentos/Cyber-101/01/Gestión_de_Seguridad_Informática_y_GRC.md)    
-    - [Modelos de Seguridad y Principios de diseño](/Fundamentos/Cyber-101/01/Modelos_de_Seguridad_y_Principios_de_diseño.md)  
-
-
-> [2. Linux Fundamentals](/Fundamentos/Cyber-101/02/)  
-    - [Linux fundamentals 1](/Fundamentos/Cyber-101/02/Linux_Fundamentals_1_-_Find_Grep_Operadores.md)  
-    - [Linux fundamentals 2](/Fundamentos/Cyber-101/02/Linux_Fundamentals_2_-_SSH.md)  
-    - [Linux fundamentals 3](/Fundamentos/Cyber-101/02/Linux_Fundamentals_3_-_wget,_ps,_cron,_apt,_logs.md)  
-
-
-
 <!--
 > [3. Windows AD Fundamentals](/Fundamentos/Cyber-101/03/)  
 > [4. Command Line](/Fundamentos/Cyber-101/04/)  
