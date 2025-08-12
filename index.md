@@ -23,7 +23,7 @@ El contenido se irá actualizando a diario. Si tienes cualquier duda o sugerenci
 
 Pequeñas guías y notas sobre conceptos clave que todo profesional debería conocer.
 
-- [CyberSecurity 101](/Fundamentos/Cyber-101)  
+- [CyberSecurity 101](/Fundamentos/Cyber-101/)  
 
 <!--
 > [3. Windows AD Fundamentals](/Fundamentos/Cyber-101/03/)  
