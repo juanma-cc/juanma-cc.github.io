@@ -10,9 +10,9 @@ Curso introductorio sobre conceptos fundamentales de ciberseguridad y Linux, dis
 
 Entiende las bases del campo de la ciberseguridad y cómo empezar tu camino profesional.
 
-> [Cyber Kill Chain](/Fundamentos/Cyber-101/01/Cyber_Kill_Chain)  
-> [Gestión de Seguridad Informática y GRC](/Fundamentos/Cyber-101/01/Gestión_de_Seguridad_Informática_y_GRC)  
-> [Modelos de Seguridad y Principios de Diseño](/Fundamentos/Cyber-101/01/Modelos_de_Seguridad_y_Principios_de_Diseño)
+> [Cyber Kill Chain](/fundamentos/Cyber-101/01/Cyber_Kill_Chain)  
+> [Gestión de Seguridad Informática y GRC](/fundamentos/Cyber-101/01/Gestión_de_Seguridad_Informática_y_GRC)  
+> [Modelos de Seguridad y Principios de Diseño](/fundamentos/Cyber-101/01/Modelos_de_Seguridad_y_Principios_de_Diseño)
 
 ---
 
@@ -20,9 +20,9 @@ Entiende las bases del campo de la ciberseguridad y cómo empezar tu camino prof
 
 Introducción práctica al uso de sistemas Linux en entornos de ciberseguridad.
 
-> [Linux Fundamentals 1 - Find Grep Operadores](/Fundamentos/Cyber-101/02/Linux_Fundamentals_1_-_Find_Grep_Operadores)  
-> [Linux Fundamentals 2 - SSH](/Fundamentos/Cyber-101/02/Linux_Fundamentals_2_-_SSH)  
-> [Linux Fundamentals 3 - wget, ps, cron, apt, logs](/Fundamentos/Cyber-101/02/Linux_Fundamentals_3_-_wget,_ps,_cron,_apt,_logs)
+> [Linux Fundamentals 1 - Find Grep Operadores](/fundamentos/Cyber-101/02/Linux_Fundamentals_1_-_Find_Grep_Operadores)  
+> [Linux Fundamentals 2 - SSH](/fundamentos/Cyber-101/02/Linux_Fundamentals_2_-_SSH)  
+> [Linux Fundamentals 3 - wget, ps, cron, apt, logs](/fundamentos/Cyber-101/02/Linux_Fundamentals_3_-_wget,_ps,_cron,_apt,_logs)
 
 ---
 <!--
@@ -30,8 +30,8 @@ Introducción práctica al uso de sistemas Linux en entornos de ciberseguridad.
 
 Conceptos básicos sobre sistemas Windows y Active Directory desde la perspectiva de seguridad.
 
-> [Windows Fundamentals 1](/Fundamentos/Cyber-101/03/windows-fundamentals-1.md)  
-> [Windows Fundamentals 2](/Fundamentos/Cyber-101/03/windows-fundamentals-2.md)
+> [Windows Fundamentals 1](/fundamentos/Cyber-101/03/windows-fundamentals-1.md)  
+> [Windows Fundamentals 2](/fundamentos/Cyber-101/03/windows-fundamentals-2.md)
 
 ---
 
@@ -39,9 +39,9 @@ Conceptos básicos sobre sistemas Windows y Active Directory desde la perspectiv
 
 Manejo avanzado de líneas de comandos en sistemas Linux y Windows.
 
-> [Linux Shells](/Fundamentos/Cyber-101/04/linux-shells.md)  
-> [Windows Command Line](/Fundamentos/Cyber-101/04/windows-command-line.md)  
-> [Windows PowerShell](/Fundamentos/Cyber-101/04/windows-powershell.md)
+> [Linux Shells](/fundamentos/Cyber-101/04/linux-shells.md)  
+> [Windows Command Line](/fundamentos/Cyber-101/04/windows-command-line.md)  
+> [Windows PowerShell](/fundamentos/Cyber-101/04/windows-powershell.md)
 
 ---
 
@@ -49,12 +49,12 @@ Manejo avanzado de líneas de comandos en sistemas Linux y Windows.
 
 Conocimientos esenciales sobre redes aplicados a la ciberseguridad.
 
-> [Networking Concepts - OSI y Capas de Red](/Fundamentos/Cyber-101/05/networking-concepts-osiy-capas-de-red.md)  
-> [Networking Essentials](/Fundamentos/Cyber-101/05/networking-essentials.md)  
-> [Networking Core Protocols](/Fundamentos/Cyber-101/05/networking-core-protocols.md)  
-> [Networking Secure Protocols](/Fundamentos/Cyber-101/05/networking-secure-protocols.md)  
-> [Nmap](/Fundamentos/Cyber-101/05/nmap.md)  
-> [TCPDump 🔥](/Fundamentos/Cyber-101/05/tcpdump.md)
+> [Networking Concepts - OSI y Capas de Red](/fundamentos/Cyber-101/05/networking-concepts-osiy-capas-de-red.md)  
+> [Networking Essentials](/fundamentos/Cyber-101/05/networking-essentials.md)  
+> [Networking Core Protocols](/fundamentos/Cyber-101/05/networking-core-protocols.md)  
+> [Networking Secure Protocols](/fundamentos/Cyber-101/05/networking-secure-protocols.md)  
+> [Nmap](/fundamentos/Cyber-101/05/nmap.md)  
+> [TCPDump 🔥](/fundamentos/Cyber-101/05/tcpdump.md)
 
 ---
 
@@ -62,10 +62,10 @@ Conocimientos esenciales sobre redes aplicados a la ciberseguridad.
 
 Fundamentos de criptografía aplicada a la protección de datos y comunicaciones seguras.
 
-> [Criptografía Básica](/Fundamentos/Cyber-101/06/criptografia-basica.md)  
-> [Hashing Basics](/Fundamentos/Cyber-101/06/hashing-basics.md)  
-> [Public Key Cryptography Basics](/Fundamentos/Cyber-101/06/public-key-cryptography-basics.md)  
-> [John the Ripper](/Fundamentos/Cyber-101/06/john-the-ripper.md)
+> [Criptografía Básica](/fundamentos/Cyber-101/06/criptografia-basica.md)  
+> [Hashing Basics](/fundamentos/Cyber-101/06/hashing-basics.md)  
+> [Public Key Cryptography Basics](/fundamentos/Cyber-101/06/public-key-cryptography-basics.md)  
+> [John the Ripper](/fundamentos/Cyber-101/06/john-the-ripper.md)
 
 ---
 
@@ -73,11 +73,11 @@ Fundamentos de criptografía aplicada a la protección de datos y comunicaciones
 
 Primeros pasos en técnicas de explotación y uso de herramientas como Metasploit.
 
-> [Blue](/Fundamentos/Cyber-101/07/blue.md)  
-> [Exploitation Basics](/Fundamentos/Cyber-101/07/exploitation-basics.md)  
-> [Metasploit - Exploitation](/Fundamentos/Cyber-101/07/metasploit-exploitation.md)  
-> [Metasploit - Meterpreter](/Fundamentos/Cyber-101/07/metasploit-meterpreter.md)  
-> [Moniker Link (CVE-2024-21413)](/Fundamentos/Cyber-101/07/moniker-link-cve-2024-21413.md)
+> [Blue](/fundamentos/Cyber-101/07/blue.md)  
+> [Exploitation Basics](/fundamentos/Cyber-101/07/exploitation-basics.md)  
+> [Metasploit - Exploitation](/fundamentos/Cyber-101/07/metasploit-exploitation.md)  
+> [Metasploit - Meterpreter](/fundamentos/Cyber-101/07/metasploit-meterpreter.md)  
+> [Moniker Link (CVE-2024-21413)](/fundamentos/Cyber-101/07/moniker-link-cve-2024-21413.md)
 
 ---
 

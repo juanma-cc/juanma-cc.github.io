@@ -23,25 +23,23 @@ El contenido se irá actualizando a diario. Si tienes cualquier duda o sugerenci
 
 Pequeñas guías y notas sobre conceptos clave que todo profesional debería conocer.
 
-- [CyberSecurity 101](/Fundamentos/Cyber-101/)  
+- [CyberSecurity 101](/fundamentos/Cyber-101/)  
 
 <!--
-> [3. Windows AD Fundamentals](/Fundamentos/Cyber-101/03/)  
-> [4. Command Line](/Fundamentos/Cyber-101/04/)  
-> [5. Networking](/Fundamentos/Cyber-101/05/)  
-> [6. Cryptography](/Fundamentos/Cyber-101/06/)  
-> [7. Exploitation Basics](/Fundamentos/Cyber-101/07/)  
-> [8. Web Hacking](/Fundamentos/Cyber-101/08/)  
-> [9. Offensive Security Tooling](/Fundamentos/Cyber-101/09/)  
-> [10. Defensive Security](/Fundamentos/Cyber-101/10/)  
-> [11. Security Solutions](/Fundamentos/Cyber-101/11/)  
-> [12. Defensive Security Tooling](/Fundamentos/Cyber-101/12/)  
-> [13. Build Your Cyber Security Career](/Fundamentos/Cyber-101/13/)  
--->
-
+> [3. Windows AD Fundamentals](/fundamentos/Cyber-101/03/)  
+> [4. Command Line](/fundamentos/Cyber-101/04/)  
+> [5. Networking](/fundamentos/Cyber-101/05/)  
+> [6. Cryptography](/fundamentos/Cyber-101/06/)  
+> [7. Exploitation Basics](/fundamentos/Cyber-101/07/)  
+> [8. Web Hacking](/fundamentos/Cyber-101/08/)  
+> [9. Offensive Security Tooling](/fundamentos/Cyber-101/09/)  
+> [10. Defensive Security](/fundamentos/Cyber-101/10/)  
+> [11. Security Solutions](/fundamentos/Cyber-101/11/)  
+> [12. Defensive Security Tooling](/fundamentos/Cyber-101/12/)  
+> [13. Build Your Cyber Security Career](/fundamentos/Cyber-101/13/)  
 <br>
 
-➡️ *[Ver todos los fundamentos](./Fundamentos)*
+➡️ *[Ver todos los fundamentos](./fundamentos)*
 
 <br>
 
