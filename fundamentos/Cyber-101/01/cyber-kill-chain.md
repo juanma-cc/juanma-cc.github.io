@@ -11,14 +11,17 @@ La **fase de weaponization**, dentro del ciclo de vida de un ataque cibernético
 ## 2. 🧠 Definiciones Clave
 
 ### 2.1 Malware (Software Malicioso)
+
 - **Definición**: Programa diseñado específicamente para dañar, interrumpir o obtener acceso no autorizado a un sistema informático.
 - **Ejemplo**: Un virus que roba credenciales de usuarios o un ransomware que cifra archivos y pide rescate.
 
 ### 2.2 Exploit (Explotación)
+
 - **Definición**: Código o programa que aprovecha una vulnerabilidad existente en un software o sistema para realizar acciones no autorizadas.
 - **Ejemplo**: Un exploit para un fallo de seguridad en Microsoft Windows permite a un atacante ejecutar código remoto sin permiso.
 
 ### 2.3 Payload (Carga Útil)
+
 - **Definición**: Código malicioso que se ejecuta tras una explotación exitosa. Es el “arma” real que causa el daño.
 - **Ejemplo**: Una carga útil puede ser un script que descifre contraseñas, borre respaldos o suba contenido malicioso al sistema infectado.
 
@@ -54,6 +57,7 @@ Durante esta fase, el atacante define cuál será el impacto deseado del ataque.
 ### 5.1 Comprar un Payload en el DarkWeb
 
 Megatron compra un **payload** ya listo para uso. Esto implica:
+
 - No necesitar experiencia técnica avanzada.
 - Reducir riesgos operativos al no desarrollar desde cero.
 - Aprovechar exploits comprobados y actualizados.
@@ -65,6 +69,7 @@ Megatron compra un **payload** ya listo para uso. Esto implica:
 ### 5.2 Configurar el Payload
 
 Tras adquirir el payload, Megatron lo configura para que sea compatible con el entorno objetivo. Esto puede incluir:
+
 - Personalizar direcciones IP de destino.
 - Adaptar el payload para evadir detección (obfuscación).
 - Integrarlo con herramientas de comando y control (C2 - *Command and Control*).
@@ -127,6 +132,7 @@ El documento menciona el **ataque a Target**, uno de los mayores incidentes de c
 Después de un ataque, es fundamental realizar un análisis forense para entender qué tipo de payload se usó, cómo fue distribuido y cómo podría haberse evitado.
 
 ### 9.1 Puntos Clave en el Análisis
+
 - Identificar el tipo de malware usado.
 - Determinar el vector de entrada (phishing, exploit, etc.).
 - Analizar los logs de red y actividad del sistema.

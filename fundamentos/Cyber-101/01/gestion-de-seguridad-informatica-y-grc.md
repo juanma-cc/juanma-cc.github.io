@@ -25,6 +25,7 @@ Desarrollar políticas, estándares, guías, etc., implica seguir un proceso est
 ### 2.1 Identificar Alcance y Propósito
 
 Se define qué cubrirá el documento y por qué se necesita. Por ejemplo:
+
 - **Propósito**: Establecer límites en el uso de recursos de la red.
 - **Alcance**: Todos los empleados y sistemas conectados a la red corporativa.
 
@@ -67,6 +68,7 @@ Para ilustrar estos conceptos, se presentan ejemplos basados en situaciones real
 ### 3.1 Definición de Tipos de Incidentes
 
 Se identifican categorías de incidentes comunes:
+
 - **Acceso no autorizado**
 - **Infecciones por malware**
 - **Vulnerabilidades de datos**
@@ -76,6 +78,7 @@ Se identifican categorías de incidentes comunes:
 ### 3.2 Definición de Roles y Responsabilidades
 
 Se identifica quién actuará durante un incidente:
+
 - **Equipo de respuesta a incidentes**
 - **Personal IT**
 - **Equipos legales y cumplimiento**
@@ -86,6 +89,7 @@ Se identifica quién actuará durante un incidente:
 ### 3.3 Pasos Detallados para la Respuesta a Incidentes
 
 Se desarrollan procedimientos paso a paso:
+
 1. **Respuesta Inicial**: Contener el incidente y preservar evidencias.
 2. **Análisis e Investigación**: Determinar causa raíz y evaluar impacto.
 3. **Mitigación y Recuperación**: Minimizar daños, restaurar operaciones normales.
@@ -109,6 +113,7 @@ Se crean políticas que gobiernan el uso y protección de activos de informació
 ### 4.2 Gestión de Riesgos
 
 Implica:
+
 - **Evaluación de riesgos**: Identificación y evaluación de amenazas potenciales.
 - **Tratamiento de riesgos**: Selección e implementación de controles para reducir riesgos a niveles aceptables.
 - **Declaración de Aplicabilidad (SoA)**: Documento que indica qué controles son aplicables según estándares internacionales como ISO/IEC 27001.
@@ -186,6 +191,7 @@ Las auditorías externas, como las de **SOC 2** (*Service Organization Control 2
 ### 8.1 Recepción del Informe de Auditoría
 
 Tras finalizar la auditoría, se entrega un informe que incluye:
+
 - Descripción de los controles implementados.
 - Deficiencias encontradas.
 - Recomendaciones para mejoras.
@@ -195,6 +201,7 @@ Tras finalizar la auditoría, se entrega un informe que incluye:
 ### 8.2 Controles Técnicos Requeridos
 
 Según el alcance de la auditoría, se verifican controles específicos:
+
 - **Cifrado de datos en tránsito**
 - **Seguridad de redes**
 - **Gestión de incidentes**
@@ -222,6 +229,7 @@ Identificar riesgos potenciales y sus posibles consecuencias, así como contrame
 ### 9.3 Ejecución del ISMS
 
 Un ISMS bien diseñado requiere:
+
 - Análisis exhaustivo de procedimientos de seguridad.
 - Detección de brechas.
 - Implementación de controles.
@@ -256,4 +264,4 @@ Este documento ofrece una visión estructurada de cómo construir y mantener un 
 - [OWASP Top Ten Threats](https://owasp.org/www-project-top-ten/)
 - [PCI DSS – Payment Card Industry Data Security Standard](https://www.pcisecuritystandards.org/)
 - [HIPAA – Health Insurance Portability and Accountability Act](https://www.hhs.gov/hipaa/index.html)
-- [SOC 2 Audit Framework](https://www.aicpa.org/interestareas/frc/resources/soc2.html)
+- [SOC 2 Audit Framework](https://www.aicpa.org/interestareas/frc/resources/soc2.html)  

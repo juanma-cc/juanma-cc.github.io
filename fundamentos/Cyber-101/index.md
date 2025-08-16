@@ -2,50 +2,49 @@
 
 Curso introductorio sobre conceptos fundamentales de ciberseguridad y Linux, diseñado para quienes desean comenzar su carrera en seguridad informática.
 
-
-
 ---
 
-### 🔹 01 - Start Your Cyber Security Journey
+## 🔹 01 - Start Your Cyber Security Journey
 
 Entiende las bases del campo de la ciberseguridad y cómo empezar tu camino profesional.
 
-> [Cyber Kill Chain](/fundamentos/Cyber-101/01/Cyber_Kill_Chain)  
-> [Gestión de Seguridad Informática y GRC](/fundamentos/Cyber-101/01/Gestión_de_Seguridad_Informática_y_GRC)  
-> [Modelos de Seguridad y Principios de Diseño](/fundamentos/Cyber-101/01/Modelos_de_Seguridad_y_Principios_de_Diseño)
+> [Cyber Kill Chain](/fundamentos/Cyber-101/01/cyber-kill-chain)  
+> [Gestión de Seguridad Informática y GRC](/fundamentos/Cyber-101/01/gestion-de-seguridad-informatica-y-grc)  
+> [Modelos de Seguridad y Principios de Diseño](/fundamentos/Cyber-101/01/modelos-de-seguridad-y-principios-de-diseno)  
 
 ---
 
-### 🔹 02 - Linux Fundamentals
+## 🔹 02 - Linux Fundamentals
 
 Introducción práctica al uso de sistemas Linux en entornos de ciberseguridad.
 
-> [Linux Fundamentals 1 - Find Grep Operadores](/fundamentos/Cyber-101/02/Linux_Fundamentals_1_-_Find_Grep_Operadores)  
-> [Linux Fundamentals 2 - SSH](/fundamentos/Cyber-101/02/Linux_Fundamentals_2_-_SSH)  
-> [Linux Fundamentals 3 - wget, ps, cron, apt, logs](/fundamentos/Cyber-101/02/Linux_Fundamentals_3_-_wget,_ps,_cron,_apt,_logs)
+> [Linux Fundamentals 1 - Find Grep Operadores](/fundamentos/Cyber-101/02/linux-fundamentals-1)  
+> [Linux Fundamentals 2 - SSH](/fundamentos/Cyber-101/02/linux-fundamentals-2)  
+> [Linux Fundamentals 3 - Editores de texto](/fundamentos/Cyber-101/02/linux-fundamentals-3)  
 
 ---
-<!--
-### 🔹 03 - Windows and AD Fundamentals
+
+## 🔹 03 - Windows and AD Fundamentals
 
 Conceptos básicos sobre sistemas Windows y Active Directory desde la perspectiva de seguridad.
 
-> [Windows Fundamentals 1](/fundamentos/Cyber-101/03/windows-fundamentals-1.md)  
-> [Windows Fundamentals 2](/fundamentos/Cyber-101/03/windows-fundamentals-2.md)
+> [Windows Fundamentals 1](/fundamentos/Cyber-101/03/windows-fundamentals-1)  
+> [Windows Fundamentals 2](/fundamentos/Cyber-101/03/windows-fundamentals-2)  
 
 ---
 
-### 🔹 04 - Command Line
+## 🔹 04 - Command Line
 
 Manejo avanzado de líneas de comandos en sistemas Linux y Windows.
 
-> [Linux Shells](/fundamentos/Cyber-101/04/linux-shells.md)  
-> [Windows Command Line](/fundamentos/Cyber-101/04/windows-command-line.md)  
-> [Windows PowerShell](/fundamentos/Cyber-101/04/windows-powershell.md)
+> [Linux Shells](/fundamentos/Cyber-101/04/linux-shells)  
+> [Windows Command Line](/fundamentos/Cyber-101/04/windows-command-line)  
+> [Windows PowerShell](/fundamentos/Cyber-101/04/windows-powershell)
 
 ---
 
-### 🔹 05 - Networking
+<!--
+## 🔹 05 - Networking
 
 Conocimientos esenciales sobre redes aplicados a la ciberseguridad.
 
@@ -58,7 +57,7 @@ Conocimientos esenciales sobre redes aplicados a la ciberseguridad.
 
 ---
 
-### 🔹 06 - Cryptography
+## 🔹 06 - Cryptography
 
 Fundamentos de criptografía aplicada a la protección de datos y comunicaciones seguras.
 
@@ -69,7 +68,7 @@ Fundamentos de criptografía aplicada a la protección de datos y comunicaciones
 
 ---
 
-### 🔹 07 - Exploitation Basics
+## 🔹 07 - Exploitation Basics
 
 Primeros pasos en técnicas de explotación y uso de herramientas como Metasploit.
 
@@ -81,7 +80,7 @@ Primeros pasos en técnicas de explotación y uso de herramientas como Metasploi
 
 ---
 
-### 🔹 08 - Web Hacking
+## 🔹 08 - Web Hacking
 
 Introducción al hacking de aplicaciones web y herramientas clave.
 
@@ -93,7 +92,7 @@ Introducción al hacking de aplicaciones web y herramientas clave.
 
 ---
 
-### 🔹 09 - Offensive Security Tooling
+## 🔹 09 - Offensive Security Tooling
 
 Uso de herramientas clave para auditorías ofensivas.
 
@@ -104,7 +103,7 @@ Uso de herramientas clave para auditorías ofensivas.
 
 ---
 
-### 🔹 10 - Defensive Security
+## 🔹 10 - Defensive Security
 
 Conceptos básicos sobre defensa proactiva y respuesta ante incidentes.
 
@@ -117,7 +116,7 @@ Conceptos básicos sobre defensa proactiva y respuesta ante incidentes.
 
 ---
 
-### 🔹 11 - Security Solutions
+## 🔹 11 - Security Solutions
 
 Herramientas y soluciones comunes usadas en entornos corporativos.
 
@@ -128,7 +127,7 @@ Herramientas y soluciones comunes usadas en entornos corporativos.
 
 ---
 
-### 🔹 12 - Defensive Security Tooling
+## 🔹 12 - Defensive Security Tooling
 
 Uso de herramientas especializadas para análisis forense y defensivo.
 
@@ -139,7 +138,7 @@ Uso de herramientas especializadas para análisis forense y defensivo.
 
 ---
 
-### 🔹 13 - Build Your Cyber Security Career
+## 🔹 13 - Build Your Cyber Security Career
 
 Guía para construir una carrera sólida en ciberseguridad.
 
@@ -149,4 +148,4 @@ Guía para construir una carrera sólida en ciberseguridad.
 
 ---
 -->
-➡️ *[Ir al Índice Principal](/)*
+➡️ *[Ir al índice principal](/)*

